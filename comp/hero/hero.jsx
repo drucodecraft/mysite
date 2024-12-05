@@ -11,13 +11,13 @@ export default function Hero() {
         </span>
         <h1 className=" text-5xl lg:text-7xl font-semibold text-gray-950">
           I Build functional and{" "}
-          <span className=" text-slate-600"> visually </span> appealing web
+          <span className=" text-sky-500"> visually </span> appealing web
           applications
         </h1>
       </section>
       <section className=" flex flex-col lg:flex-row lg:items-center gap-2">
         <p className=" lg:flex-grow  flex flex-wrap text-gray-500 text-xl lg:text-2xl">
-          <span className=" border-slate-500  pr-2 border-r ">
+          <span className=" border-sky-500  pr-2 border-r ">
             UI/UX Designer
           </span>
           <span className=" px-2 ">Developer</span>

@@ -35,16 +35,14 @@ export default function Timeline() {
                bg-gray-300 shadow-md rounded-lg p-8 lg:border-l-4 drop-shadow-md border-gray-200 lg:border-r-4  relative`}
             >
               {data.Icon ? (
-                <data.Icon
-                  className={`w-8 h-8 text-indigo-500 drop-shadow-md`}
-                />
+                <data.Icon className={`w-8 h-8 text-sky-500 drop-shadow-md`} />
               ) : (
                 ""
               )}
-              <h3 className=" text-xl font-semibold text-gray-900 drop-shadow-md">
+              <h3 className=" text-xl font-semibold text-gray-50 drop-shadow-sm">
                 {data.title}
               </h3>
-              <hr className=" drop-shadow-md max-w-8 border-t-slate-700 my-2 " />
+              <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
               <p className=" text-gray-600 font-light text-lg drop-shadow-md">
                 {data.content}
               </p>

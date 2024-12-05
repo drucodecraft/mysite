@@ -4,10 +4,11 @@ import dynamic from "next/dynamic";
 const HeroSection = dynamic(()=>import("@/comp/hero/hero"),{ssr:true})
 const About = dynamic(() =>import("@/comp/about/about"),{ssr:true}
 )
-const Skills = dynamic(()=>import("@/comp/skills/skills"));
-const Qoute = dynamic(()=>import('@/comp/qoute/qoute'))
-const Projects = dynamic(()=>import("@/comp/projects/projects"));
-const Footer = dynamic(()=>import('@/comp/footer/footer'))
+const Skills = dynamic(()=>import("@/comp/skills/skills"),{ssr:true});
+const Qoute = dynamic(()=>import('@/comp/qoute/qoute'),{ssr:true})
+const Projects = dynamic(()=>import("@/comp/projects/projects"),{ssr:true});
+const Footer = dynamic(()=>import('@/comp/footer/footer'),{ssr:true})
+const ScrollTop = dynamic(()=>import("@/comp/scrollTop/scrolltop"),{ssr:true})
 import useStore from '@/globalState/store'
 import { useEffect } from "react";
 export default function Home() {
@@ -22,7 +23,7 @@ export default function Home() {
   },[toggle])
   
   return (
-    <div className={ `   flex flex-col font-[family-name:var(--font-geist-sans)]`}>
+    <div className={ ` relative  flex flex-col font-[family-name:var(--font-geist-sans)]`}>
       <HeroSection/>
       <About/>
       <Skills/>
@@ -30,6 +31,7 @@ export default function Home() {
       <Projects/>
      
       <Footer/>
+      <ScrollTop/>
       
     </div>
   );

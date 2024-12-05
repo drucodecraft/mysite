@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
-
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import useStore from "@/globalState/store";
+gsap.registerPlugin(ScrollToPlugin);
 const Bar = dynamic(() => import("@/comp/bar/bar"));
 export default function Skills() {
+  let { selected } = useStore();
+
+  const skillsRef = useRef(null);
+  useEffect(() => {
+    if (skillsRef.current) {
+      let skillsElement = skillsRef.current;
+      if (selected === 2) {
+        gsap.to(window, {
+          scrollTo: skillsElement,
+          duration: 2,
+          ease: "power2.out",
+        });
+      }
+    }
+  }, [selected]);
   return (
-    <div className="  w-full px-10 lg:px-24 lg:gap-4 min-h-screen justify-center flex flex-col   ">
+    <div
+      ref={skillsRef}
+      className="  w-full px-10 lg:px-24 lg:gap-4 min-h-screen justify-center flex flex-col   "
+    >
       <section className=" flex flex-col gap-5 lg:grid lg:grid-cols-12  ">
         <div className=" lg:col-span-12">
-          <h2 className={`  text-4xl text-gray-900 font-semibold `}>
+          <h2 className={`  text-3xl text-slate-700 font-semibold `}>
             My Skills.
           </h2>
         </div>

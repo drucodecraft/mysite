@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaFacebook, FaWhatsapp, FaLinkedin } from "react-icons/fa";
-
+import useStore from "@/globalState/store";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 export default function Footer() {
+  let { selected } = useStore();
+  const footerRef = useRef(null);
+  useEffect(() => {
+    if (footerRef.current) {
+      const footerElement = footerRef.current;
+      if (selected === 4) {
+        gsap.to(window, {
+          scrollTo: footerElement,
+          duration: 2,
+          ease: "power2.out",
+        });
+      }
+    }
+  }, [selected]);
   return (
-    <footer className=" bg-gray-950  w-full px-10 lg:px-24  pt-24 pb-12 justify-center flex flex-col   ">
+    <footer
+      ref={footerRef}
+      className=" bg-gray-900  w-full px-10 lg:px-24  pt-24 pb-12 justify-center flex flex-col   "
+    >
       <div className=" gap-4 flex flex-col">
         <section className=" flex   flex-col lg:flex-row gap-5 ">
           <article className=" flex-1">
-            <p className=" text-center lg:text-start text-slate-300 text-4xl">
+            <p className=" text-center lg:text-start text-slate-300 text-3xl">
               Building modern web experiences with clean code and innovative
               design.
             </p>
@@ -18,15 +38,14 @@ export default function Footer() {
                 {
                   link: "Who I Am",
                 },
-                {
-                  link: "Let's Connect",
-                },
+
                 { link: "What I Do" },
-                { link: "Showcase" },
+                { link: "My Work" },
+                { link: "Reach Out" },
               ].map((link, index) => {
                 return (
                   <li
-                    className=" drop-shadow-sm text-lg text-blue-500 underline underline-offset-2 decoration-blue-300  lg:hover:underline-offset-4 lg:cursor-pointer"
+                    className=" drop-shadow-sm text-lg text-blue-500  lg:cursor-pointer"
                     key={index}
                   >
                     <p>{link.link}</p>

@@ -7,24 +7,56 @@ import gsap from "gsap";
 export default function NavBar() {
   const linksRef = useRef(null);
   const navBarRef = useRef(null);
+  const toggleButtonRef = useRef(null);
 
-  const { toggle, toggleNav } = useStore();
+  const { toggle, toggleNav, select, selected } = useStore();
+  console.log(selected);
+
   useEffect(() => {
-    let link_section = linksRef.current;
-    if (toggle) {
-      gsap.to(link_section, {
-        height: "auto",
-        duration: 0.5,
-        opacity: 1,
-        ease: "power2.out",
-      });
-    } else {
-      gsap.to(link_section, {
-        height: 0,
-        duration: 0.5,
-        opacity: 0,
-        ease: "power2.out",
-      });
+    if (linksRef.current && toggleButtonRef.current) {
+      const buttonElement = toggleButtonRef.current;
+      let link_section = linksRef.current;
+      if (toggle) {
+        gsap.to(link_section, {
+          height: "auto",
+          duration: 0.5,
+          opacity: 1,
+          ease: "power2.out",
+        });
+        gsap.to(buttonElement.children[0], {
+          y: 6,
+          transformOrigin: "center",
+          rotate: -45,
+        });
+        gsap.to(buttonElement.children[1], {
+          opacity: 0,
+        });
+        gsap.to(buttonElement.children[2], {
+          y: -6,
+          transformOrigin: "center",
+          rotate: 45,
+        });
+      } else {
+        gsap.to(link_section, {
+          height: 0,
+          duration: 0.5,
+          opacity: 0,
+          ease: "power2.out",
+        });
+        gsap.to(buttonElement.children[0], {
+          y: 0,
+          transformOrigin: "center",
+          rotate: 0,
+        });
+        gsap.to(buttonElement.children[1], {
+          opacity: 1,
+        });
+        gsap.to(buttonElement.children[2], {
+          y: 0,
+          transformOrigin: "center",
+          rotate: 0,
+        });
+      }
     }
   }, [toggle]);
   useEffect(() => {
@@ -36,19 +68,31 @@ export default function NavBar() {
             y: -navBarSection.offsetHeight,
             opacity: 0,
             duration: 0.3,
-            ease: "power2.inOut",
+            ease: "power2.Out",
           });
         } else {
           gsap.to(navBarSection, {
             y: 0,
             opacity: 1,
             duration: 0.3,
-            ease: "power2.inOut",
+            ease: "power2.in",
           });
         }
       });
     }
   }, []);
+  useEffect(() => {
+    if (linksRef.current) {
+      const linksList = linksRef.current.children[0].children;
+      const linksArray = [...linksList];
+      linksArray.map((linkElement, index) => {
+        linkElement.addEventListener("click", () => {
+          toggleNav(false);
+          select(index + 1);
+        });
+      });
+    }
+  }, [selected]);
 
   return (
     <nav
@@ -64,7 +108,10 @@ export default function NavBar() {
           </span>
         </div>
         <div
-          className="  flex flex-col gap-1 px-3 outline outline-1 rounded-xl outline-gray-800 py-3"
+          ref={toggleButtonRef}
+          className={`${
+            toggle ? "outline-2 outline-slate-600" : "outline-1"
+          }  flex flex-col gap-1 px-3 outline  rounded-xl outline-gray-800 py-3`}
           onClick={() => {
             if (toggle) {
               toggleNav(false);
@@ -79,7 +126,7 @@ export default function NavBar() {
         </div>
       </section>
       <section
-        className="  overflow-hidden  bg-gray-900 bg-opacity-70 text-center"
+        className="  overflow-hidden  bg-gray-900  text-center"
         style={{ height: 0, opacity: 0 }}
         ref={linksRef}
       >
