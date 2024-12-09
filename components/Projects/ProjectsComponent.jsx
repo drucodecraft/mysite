@@ -7,8 +7,8 @@ export default function ProjectsComponent() {
         Projects
       </h2>
       <p className=" text-gray-600 font-medium text-xl drop-shadow-md">
-        I'm currently working on projects that will demonstrate my expertise.
-        Stay tuned!
+        I&apos;m currently working on projects that will demonstrate my
+        expertise. Stay tuned!
       </p>
     </div>
   );

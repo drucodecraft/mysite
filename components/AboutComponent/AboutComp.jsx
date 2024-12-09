@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "@/store/useStore";
@@ -27,7 +27,7 @@ const data = [
 ];
 
 export default function AboutComp() {
-  let { select, selected, top, setTop, moveToval, setMoveTo } = useStore();
+  let { select, setTop, moveToval } = useStore();
 
   const aboutRef = useRef(null);
 

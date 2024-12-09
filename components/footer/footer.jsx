@@ -1,13 +1,11 @@
 "use client";
-import React, { useRef } from "react";
+import React from "react";
 import {
   FaFacebook,
   FaWhatsapp,
   FaLinkedin,
   FaRegEnvelope,
 } from "react-icons/fa";
-
-import gsap from "gsap";
 
 export default function Footer() {
   return (
