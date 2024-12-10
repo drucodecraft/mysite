@@ -18,7 +18,7 @@ export default function Skills() {
       if (selected === 2) {
         gsap.to(window, {
           scrollTo: skillsRef.current,
-          duration: 2,
+
           ease: "power3.inOut",
         });
       }
@@ -32,7 +32,7 @@ export default function Skills() {
     >
       <section className=" flex flex-col gap-5  ">
         <div className=" ">
-          <h2 className={`  text-3xl text-white font-black `}>My Expertise</h2>
+          <h2 className={`  text-3xl text-white font-bold `}>My Expertise</h2>
         </div>
         <div className=" col-span-6 ">
           <p className=" text-gray-600 font-light text-xl drop-shadow-sm">

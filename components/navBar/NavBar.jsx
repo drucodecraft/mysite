@@ -11,6 +11,10 @@ export default function NavBar() {
 
     setMoveTo,
   } = useStore();
+  const handleClick = (value) => {
+    select(0);
+    select(value);
+  };
   const toggleButtonRef = useRef(null);
   const linksComponentRef = useRef(null);
   useEffect(() => {
@@ -34,8 +38,10 @@ export default function NavBar() {
   return (
     <nav className=" fixed z-50 flex flex-col w-full h-full">
       <section className="flex relative z-10  px-4 py-4 items-center justify-between">
-        <div className=" flex items-center text-gray-500 text-3xl">
-          <p className=" font-light">Simply</p>
+        <div className=" flex items-center text-gray-600 text-3xl">
+          <p className={` ${toggle ? "text-gray-800" : ""} font-light`}>
+            Simply
+          </p>
           <p className=" text-white font-black">Drew</p>.
         </div>
         <div
@@ -47,7 +53,9 @@ export default function NavBar() {
               toggleActive(true);
             }
           }}
-          className=" flex flex-col gap-1 outline outline-slate-500 outline-1 rounded-lg py-2 px-3"
+          className={` flex flex-col gap-1 outline  outline-1 rounded-lg py-2 px-3 ${
+            toggle ? "outline-slate-800" : "outline-slate-600"
+          }`}
         >
           <span className=" bg-gray-300 w-5 h-0.5"></span>
           <span className=" bg-gray-300 w-5 h-0.5"></span>
@@ -56,12 +64,12 @@ export default function NavBar() {
       </section>
       <section
         ref={linksComponentRef}
-        className={` opacity-0  absolute min-h-screen w-full bg-slate-950 flex justify-center items-center`}
+        className={` opacity-0  absolute min-h-screen w-full bg-slate-950 flex justify-end `}
       >
-        <ul className=" text-center gap-4 flex flex-col text-2xl font-semibold text-gray-500">
+        <ul className=" mt-24 mr-8  gap-8 flex flex-col text-xl font-medium text-gray-500 text-end">
           <li
             onClick={() => {
-              select(1);
+              handleClick(1);
               toggleActive(false);
             }}
           >
@@ -69,7 +77,7 @@ export default function NavBar() {
           </li>
           <li
             onClick={() => {
-              select(2);
+              handleClick(2);
               toggleActive(false);
             }}
           >
@@ -77,7 +85,7 @@ export default function NavBar() {
           </li>
           <li
             onClick={() => {
-              select(3);
+              handleClick(3);
               toggleActive(false);
             }}
           >

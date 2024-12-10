@@ -32,8 +32,8 @@ export default function Top() {
       onClick={() => {
         gsap.to(window, {
           scrollTo: 0,
-          duration: 1.5,
-          ease: "power3.in",
+
+          ease: "power2.in",
         });
       }}
       ref={ScrollTopRef}

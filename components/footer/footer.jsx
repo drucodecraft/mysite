@@ -13,13 +13,13 @@ export default function Footer() {
       <div className=" gap-4 flex flex-col">
         <section className=" flex   flex-col gap-6 ">
           <article className=" flex-1">
-            <p className=" text-center  text-gray-400 text-3xl font-semibold">
+            <p className=" text-center  text-gray-400 text-3xl font-medium">
               Building Modern Web Experiences With Clean Code And Innovative
               Design.
             </p>
           </article>
           <article className="flex-1 flex w-full justify-center ">
-            <button className=" py-2 px-6 rounded-xl bg-gray-950 text-gray-600 flex items-center gap-2 text-xl font-semibold">
+            <button className=" py-2 px-6 rounded-xl bg-white text-gray-800 flex items-center gap-2 text-xl font-semibold">
               <span>Email Me</span>
               <FaRegEnvelope className="  text-cyan-700 h-8 w-8" />
             </button>
@@ -41,7 +41,7 @@ export default function Footer() {
           </article>
         </section>
         <section className=" flex w-full justify-center">
-          <p className=" text-gray-700 text-center text-lg drop-shadow-sm font-medium">
+          <p className=" text-gray-500 text-center text-lg drop-shadow-sm font-medium">
             {" "}
             @2024 Simply Drew. All rights reserved
           </p>

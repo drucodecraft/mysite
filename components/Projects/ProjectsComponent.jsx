@@ -13,7 +13,7 @@ export default function ProjectsComponent() {
       if (selected === 3) {
         gsap.to(window, {
           scrollTo: projectRef.current,
-          duration: 2,
+
           ease: "power3.inOut",
         });
       }
@@ -24,7 +24,7 @@ export default function ProjectsComponent() {
       <h2 className=" bg-cyan-500 py-2 rounded-t-xl text-3xl mb-4 font-bold text-center text-white drop-shadow-md">
         Projects
       </h2>
-      <p className=" text-gray-600 font-medium text-xl drop-shadow-md">
+      <p className=" text-gray-600 font-light text-lg drop-shadow-md">
         I&apos;m currently working on projects that will demonstrate my
         expertise. Stay tuned!
       </p>

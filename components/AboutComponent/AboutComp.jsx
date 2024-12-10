@@ -56,7 +56,7 @@ export default function AboutComp() {
       if (selected === 1) {
         gsap.to(window, {
           scrollTo: aboutRef.current,
-          duration: 2,
+
           ease: "power3.inOut",
         });
       }
@@ -66,7 +66,7 @@ export default function AboutComp() {
   return (
     <div ref={aboutRef} className=" px-4 flex flex-col gap-4">
       <section>
-        <h3 className=" text-white font-black text-3xl">Behind The Code</h3>
+        <h3 className=" text-white font-bold text-3xl">Behind The Code</h3>
       </section>
       <section>
         <ul className=" min-h-screen flex flex-col w-full gap-4 ">
@@ -83,11 +83,11 @@ export default function AboutComp() {
                         className={`w-10 h-10 text-sky-500 drop-shadow-md`}
                       />
                     }
-                    <h3 className=" text-2xl font-semibold text-gray-100 drop-shadow-sm">
+                    <h3 className=" text-xl font-semibold text-gray-100 drop-shadow-sm">
                       {content.title}
                     </h3>
                     <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                    <p className=" text-gray-600 font-medium text-xl drop-shadow-md">
+                    <p className=" text-gray-600  text-lg font-light drop-shadow-sm">
                       {content.content}
                     </p>
                   </figcaption>
