@@ -1,5 +1,5 @@
-{"parser": "@babel/eslint-parser",
-"parserOptions": {"ecmaVersion": "latest","sourceType": "module"},
-  "extends": "next/core-web-vitals",
-  "rules": {"no-unused-vars":"warn","react/jsx-uses-react":"warn"}
+{
+  
+  "extends": "next/core-web-vitals"
+ 
 }

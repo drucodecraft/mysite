@@ -27,7 +27,7 @@ const data = [
 ];
 
 export default function AboutComp() {
-  let { select, setTop, moveToval } = useStore();
+  let { setDisplayTop, selected } = useStore();
 
   const aboutRef = useRef(null);
 
@@ -39,14 +39,13 @@ export default function AboutComp() {
         scrollTrigger: {
           trigger: AboutElement,
           start: "top 50%",
+          end: "bottom 50%",
 
           onEnter: () => {
-            setTop(true);
-            select(1);
+            setDisplayTop(true);
           },
           onLeaveBack: () => {
-            setTop(false);
-            select(0);
+            setDisplayTop(false);
           },
         },
       });
@@ -54,15 +53,16 @@ export default function AboutComp() {
   }, []);
   useEffect(() => {
     if (aboutRef.current) {
-      if (moveToval === 1) {
+      if (selected === 1) {
         gsap.to(window, {
           scrollTo: aboutRef.current,
-          duration: 1,
-          ease: "sine.in",
+          duration: 2,
+          ease: "power3.inOut",
         });
       }
     }
-  }, [moveToval]);
+  }, [selected]);
+
   return (
     <div ref={aboutRef} className=" px-4 flex flex-col gap-4">
       <section>

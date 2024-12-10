@@ -4,12 +4,8 @@ let useStore = create((set) => ({
   toggleActive: (value) => set({ toggle: value }),
   selected: 0,
   select: (value) => set({ selected: value }),
-  top: false,
-  setTop: (value) => set({ top: value }),
-  linkClicked: false,
-  setClicked: (value) => set({ linkClicked: value }),
-  moveToval: 0,
-  setMoveTo: (value) => set({ moveToval: value }),
+  displayScrollTop: false,
+  setDisplayTop: (value) => set({ displayScrollTop: value }),
 }));
 
 export default useStore;

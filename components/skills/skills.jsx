@@ -7,43 +7,24 @@ import useStore from "@/store/useStore";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Bar from "@/Components/skills/bar/bar";
+import Bar from "@/components/skills/bar/bar";
 export default function Skills() {
-  let { select, selected, top, setTop, moveToval, setMoveTo } = useStore();
+  let { selected } = useStore();
 
   const skillsRef = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollToPlugin);
-    gsap.registerPlugin(ScrollTrigger);
-    if (skillsRef.current && gsap) {
-      const skillElement = skillsRef.current;
-      gsap.to(skillElement, {
-        scrollTrigger: {
-          trigger: skillElement,
-          start: "top 50%",
-
-          onEnter: () => {
-            select(2);
-          },
-          onLeaveBack: () => {
-            select(1);
-          },
-        },
-      });
-    }
-  }, []);
-  useEffect(() => {
     if (skillsRef.current) {
-      if (moveToval === 2) {
+      if (selected === 2) {
         gsap.to(window, {
           scrollTo: skillsRef.current,
-          duration: 1,
-          ease: "sine.in",
+          duration: 2,
+          ease: "power3.inOut",
         });
       }
     }
-  }, [moveToval]);
+  }, [selected]);
+
   return (
     <div
       ref={skillsRef}

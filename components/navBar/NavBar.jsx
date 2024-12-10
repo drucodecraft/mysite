@@ -6,10 +6,8 @@ export default function NavBar() {
   let {
     toggle,
     toggleActive,
-    selected,
+
     select,
-    linkClicked,
-    setClicked,
 
     setMoveTo,
   } = useStore();
@@ -32,11 +30,7 @@ export default function NavBar() {
       }
     }
   }, [toggle]);
-  useEffect(() => {
-    if (selected && linkClicked) {
-      setMoveTo(selected);
-    }
-  }, [selected, linkClicked]);
+
   return (
     <nav className=" fixed z-50 flex flex-col w-full h-full">
       <section className="flex relative z-10  px-4 py-4 items-center justify-between">
@@ -68,7 +62,6 @@ export default function NavBar() {
           <li
             onClick={() => {
               select(1);
-              setClicked(true);
               toggleActive(false);
             }}
           >
@@ -77,7 +70,6 @@ export default function NavBar() {
           <li
             onClick={() => {
               select(2);
-              setClicked(true);
               toggleActive(false);
             }}
           >
@@ -86,7 +78,6 @@ export default function NavBar() {
           <li
             onClick={() => {
               select(3);
-              setClicked(true);
               toggleActive(false);
             }}
           >
