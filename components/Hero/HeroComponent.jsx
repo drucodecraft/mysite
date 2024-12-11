@@ -10,11 +10,11 @@ export default function HeroComponent() {
     >
       <div className=" absolute bottom-0  flex gap-6 flex-col ">
         <section className=" px-10 flex flex-col gap-2">
-          <h4 className="  font-bold  text-white text-5xl">
-            Frontend Developer.
+          <h4 className="  font-semibold  text-white text-6xl">
+            Frontend Developer
             <span className="  "></span>
           </h4>
-          <h1 className="  text-lg text-gray-400 ">
+          <h1 className="  text-base font-medium text-gray-400 ">
             CRAFTING CLEAN, INTUITIVE, AND RESPONSIVE WEB EXPERIENCES
           </h1>
         </section>
@@ -35,7 +35,7 @@ export default function HeroComponent() {
             <h3 className=" font-semibold text-lg text-cyan-500">
               Little About Me
             </h3>
-            <p className=" text-lg font-normal">
+            <p className=" text-base font-normal">
               I&apos;m Andrew, passionate about creating beautiful,
               user-friendly interfaces. When I&apos;m not coding, you&apos;ll
               find me exploring new tech or enjoying outdoor.

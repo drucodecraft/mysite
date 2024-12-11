@@ -66,14 +66,14 @@ export default function AboutComp() {
   return (
     <div
       ref={aboutRef}
-      className=" bg-gradient-to-b bg-gray-200 py-20  flex flex-col gap-4 rounded-t-3xl rounded-b-3xl"
+      className=" bg-gradient-to-b bg-gray-900 py-20  flex flex-col gap-4 rounded-t-3xl rounded-b-3xl"
     >
       <section className="px-10 flex w-full text-center justify-start">
         <h3 className=" text-cyan-500 font-semibold text-2xl">
           Behind The Code
         </h3>
       </section>
-      <section className="px-5">
+      <section className="px-8">
         <ul className="  min-h-screen flex flex-col w-full gap-8 ">
           {data.map((content, index) => {
             return (

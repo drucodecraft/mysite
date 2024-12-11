@@ -39,7 +39,7 @@ export default function NavBar() {
     <nav className="  fixed z-50 flex flex-col w-full h-fit">
       <section className="flex relative  z-10  px-8 py-6 items-center justify-between">
         <div className=" flex items-center font-bold text-3xl">
-          <p className={` text-gray-950 `}>Simply</p>
+          <p className={` text-cyan-500 `}>Simply</p>
           <p className=" text-white ">Drew</p>.
         </div>
         <div

@@ -19,7 +19,7 @@ export default function Footer() {
             </p>
           </article>
           <article className="flex-1 flex w-full justify-center ">
-            <button className=" py-2 px-6 rounded-xl bg-gray-500 text-gray-800 flex items-center gap-2 text-lg ">
+            <button className=" py-2 px-6 rounded-xl bg-gray-950 text-gray-800 flex items-center gap-2 text-lg ">
               <span className=" font-medium text-gray-200">Email Me</span>
               <FaRegEnvelope className="  text-gray-50 h-8 w-8" />
             </button>
