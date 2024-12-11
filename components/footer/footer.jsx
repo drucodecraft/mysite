@@ -9,19 +9,19 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="  w-full px-10 lg:px-24  pt-24 pb-12 justify-center flex flex-col bg-gray-900   ">
+    <footer className="  w-full px-10   pt-24 pb-12 justify-center flex flex-col bg-gray-900   ">
       <div className=" gap-4 flex flex-col">
         <section className=" flex   flex-col gap-6 ">
           <article className=" flex-1">
-            <p className=" text-center  text-gray-400 text-3xl font-medium">
+            <p className=" text-center  text-gray-400 text-xl font-light">
               Building Modern Web Experiences With Clean Code And Innovative
               Design.
             </p>
           </article>
           <article className="flex-1 flex w-full justify-center ">
-            <button className=" py-2 px-6 rounded-xl bg-white text-gray-800 flex items-center gap-2 text-xl font-semibold">
-              <span>Email Me</span>
-              <FaRegEnvelope className="  text-cyan-700 h-8 w-8" />
+            <button className=" py-2 px-6 rounded-xl bg-gray-500 text-gray-800 flex items-center gap-2 text-lg ">
+              <span className=" font-medium text-gray-200">Email Me</span>
+              <FaRegEnvelope className="  text-gray-50 h-8 w-8" />
             </button>
           </article>
           <article className=" flex-1   ">
@@ -41,7 +41,7 @@ export default function Footer() {
           </article>
         </section>
         <section className=" flex w-full justify-center">
-          <p className=" text-gray-500 text-center text-lg drop-shadow-sm font-medium">
+          <p className=" text-gray-500 text-center text-base drop-shadow-sm font-normal">
             {" "}
             @2024 Simply Drew. All rights reserved
           </p>

@@ -10,7 +10,7 @@ import ProjectsComponent from "@/components/Projects/ProjectsComponent";
 import Footer from "@/components/footer/footer";
 export default function Home() {
   return (
-    <div className="relative overflow-x-hidden bg-gray-800 min-h-full w-full text-lg flex flex-col">
+    <div className="relative overflow-x-hidden bg-gray-900 min-h-full w-full text-lg flex flex-col">
       <NavBar />
       <HeroComponent />
       <AboutComp />

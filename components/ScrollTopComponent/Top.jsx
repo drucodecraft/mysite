@@ -15,7 +15,7 @@ export default function Top() {
         gsap.to(scrollUpElement, {
           alpha: 1,
           y: 0,
-          duration: 1,
+
           ease: "power4.in",
         });
       } else {

@@ -64,17 +64,22 @@ export default function AboutComp() {
   }, [selected]);
 
   return (
-    <div ref={aboutRef} className=" px-4 flex flex-col gap-4">
-      <section>
-        <h3 className=" text-white font-bold text-3xl">Behind The Code</h3>
+    <div
+      ref={aboutRef}
+      className=" bg-gradient-to-b bg-gray-200 py-20  flex flex-col gap-4 rounded-t-3xl rounded-b-3xl"
+    >
+      <section className="px-10 flex w-full text-center justify-start">
+        <h3 className=" text-cyan-500 font-semibold text-2xl">
+          Behind The Code
+        </h3>
       </section>
-      <section>
-        <ul className=" min-h-screen flex flex-col w-full gap-4 ">
+      <section className="px-5">
+        <ul className="  min-h-screen flex flex-col w-full gap-8 ">
           {data.map((content, index) => {
             return (
               <li
                 key={index}
-                className=" drop-shadow-md bg-gray-900 px-4 py-6 rounded-xl"
+                className=" drop-shadow-md px-5 bg-gray-300   py-16 rounded-xl"
               >
                 <figure>
                   <figcaption>
@@ -83,11 +88,11 @@ export default function AboutComp() {
                         className={`w-10 h-10 text-sky-500 drop-shadow-md`}
                       />
                     }
-                    <h3 className=" text-xl font-semibold text-gray-100 drop-shadow-sm">
+                    <h3 className=" text-lg font-medium  text-gray-900 drop-shadow-sm">
                       {content.title}
                     </h3>
                     <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                    <p className=" text-gray-600  text-lg font-light drop-shadow-sm">
+                    <p className=" text-gray-600  text-base font-normal drop-shadow-sm">
                       {content.content}
                     </p>
                   </figcaption>

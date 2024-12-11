@@ -28,14 +28,16 @@ export default function Skills() {
   return (
     <div
       ref={skillsRef}
-      className="  w-full px-4   min-h-screen justify-center flex flex-col   "
+      className=" rounded-t-3xl  w-full px-10 mt-4 bg-gray-800   min-h-screen justify-center flex flex-col   "
     >
       <section className=" flex flex-col gap-5  ">
         <div className=" ">
-          <h2 className={`  text-3xl text-white font-bold `}>My Expertise</h2>
+          <h2 className=" text-cyan-500 font-semibold text-2xl">
+            My Expertise
+          </h2>
         </div>
         <div className=" col-span-6 ">
-          <p className=" text-gray-600 font-light text-xl drop-shadow-sm">
+          <p className=" text-gray-400  text-base font-normal drop-shadow-sm">
             From Crafting Clean Code To Designing Intuitive User Interfaces, My
             Skillset Is Built For Creating Web Experiences. Here&apos;s A
             Breakdown Of My Expertise.
@@ -57,19 +59,19 @@ export default function Skills() {
           </ul>
         </div>
       </section>
-      <hr className="  border-t-gray-900 drop-shadow-lg my-2  flex w-full " />
+      <hr className="  border-t-gray-700 drop-shadow-lg my-2  flex w-full " />
       <div className="  flex justify-center">
-        <ul className=" flex lg:w-fit w-full overflow-hidden gap-2 lg:gap-4 lg:items-center flex-wrap">
+        <ul className=" flex  w-full text-base overflow-hidden gap-2 flex-wrap">
           <li
             className=" p-2 rounded-lg bg-blue-500
-          text-blue-950
+          text-blue-50
           drop-shadow-md"
           >
             React.js
           </li>
           <li
             className=" p-2 rounded-lg bg-green-500
-          text-green-950
+          text-green-50
           drop-shadow-md"
           >
             Next.js
@@ -78,38 +80,38 @@ export default function Skills() {
           <li
             className=" p-2 rounded-lg bg-yellow-500
           drop-shadow-md
-          text-yellow-950"
+          text-yellow-50"
           >
             HTML
           </li>
           <li
             className=" p-2 rounded-lg bg-purple-500
-          text-purple-950
+          text-purple-50
           drop-shadow-md"
           >
             CSS
           </li>
 
           <li
-            className=" p-2 rounded-lg bg-teal-500 text-teal-950
+            className=" p-2 rounded-lg bg-teal-500 text-teal-50
           drop-shadow-md"
           >
             Node.js
           </li>
           <li
             className=" p-2 rounded-lg bg-red-500
-          text-red-950
+          text-red-50
           drop-shadow-md"
           >
             Vanilla JavaScript
           </li>
           <li
-            className=" p-2 rounded-lg bg-indigo-500 text-indigo-950
+            className=" p-2 rounded-lg bg-indigo-500 text-indigo-50
           drop-shadow-md"
           >
             Tailwind
           </li>
-          <li className=" p-2 rounded-lg bg-pink-500 text-pink-950 drop-shadow-md">
+          <li className=" p-2 rounded-lg bg-pink-500 text-pink-50 drop-shadow-md">
             Express.js
           </li>
         </ul>

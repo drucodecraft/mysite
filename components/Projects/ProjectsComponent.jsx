@@ -20,11 +20,11 @@ export default function ProjectsComponent() {
     }
   }, [selected]);
   return (
-    <div ref={projectRef} className=" text-gray-500 px-4 py-20">
-      <h2 className=" bg-cyan-500 py-2 rounded-t-xl text-3xl mb-4 font-bold text-center text-white drop-shadow-md">
+    <div ref={projectRef} className=" bg-gray-800 text-gray-500 px-10 py-20">
+      <h2 className=" bg-gray-700 py-2 rounded-t-xl text-2xl mb-4 font-semibold text-center text-white drop-shadow-md">
         Projects
       </h2>
-      <p className=" text-gray-600 font-light text-lg drop-shadow-md">
+      <p className=" text-gray-600  text-base font-normal drop-shadow-sm">
         I&apos;m currently working on projects that will demonstrate my
         expertise. Stay tuned!
       </p>

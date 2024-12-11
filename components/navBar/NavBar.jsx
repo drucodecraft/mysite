@@ -36,13 +36,11 @@ export default function NavBar() {
   }, [toggle]);
 
   return (
-    <nav className=" fixed z-50 flex flex-col w-full h-full">
-      <section className="flex relative z-10  px-4 py-4 items-center justify-between">
-        <div className=" flex items-center text-gray-600 text-3xl">
-          <p className={` ${toggle ? "text-gray-800" : ""} font-light`}>
-            Simply
-          </p>
-          <p className=" text-white font-black">Drew</p>.
+    <nav className="  fixed z-50 flex flex-col w-full h-fit">
+      <section className="flex relative  z-10  px-8 py-6 items-center justify-between">
+        <div className=" flex items-center font-bold text-3xl">
+          <p className={` text-gray-950 `}>Simply</p>
+          <p className=" text-white ">Drew</p>.
         </div>
         <div
           ref={toggleButtonRef}
@@ -53,9 +51,7 @@ export default function NavBar() {
               toggleActive(true);
             }
           }}
-          className={` flex flex-col gap-1 outline  outline-1 rounded-lg py-2 px-3 ${
-            toggle ? "outline-slate-800" : "outline-slate-600"
-          }`}
+          className={` flex flex-col gap-1 outline outline-gray-400  outline-1 rounded-lg py-2 px-3 `}
         >
           <span className=" bg-gray-300 w-5 h-0.5"></span>
           <span className=" bg-gray-300 w-5 h-0.5"></span>
@@ -64,7 +60,7 @@ export default function NavBar() {
       </section>
       <section
         ref={linksComponentRef}
-        className={` opacity-0  absolute min-h-screen w-full bg-slate-950 flex justify-end `}
+        className={` opacity-0  absolute min-h-screen w-full bg-slate-600 flex justify-end `}
       >
         <ul className=" mt-24 mr-8  gap-8 flex flex-col text-xl font-medium text-gray-500 text-end">
           <li
