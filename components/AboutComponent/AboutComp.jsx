@@ -27,7 +27,7 @@ const data = [
 ];
 
 export default function AboutComp() {
-  let { setDisplayTop, selected } = useStore();
+  let { setDisplayTop, selected, select } = useStore();
 
   const aboutRef = useRef(null);
 
@@ -61,47 +61,50 @@ export default function AboutComp() {
         });
       }
     }
+    return () => {
+      select(0);
+    };
   }, [selected]);
 
   return (
-    <div
-      ref={aboutRef}
-      className=" bg-gradient-to-b bg-gray-900 py-20  flex flex-col gap-4 rounded-t-3xl rounded-b-3xl"
-    >
-      <section className="px-10 flex w-full text-center justify-start">
-        <h3 className=" text-cyan-500 font-semibold text-2xl">
-          Behind The Code
-        </h3>
-      </section>
-      <section className="px-8">
-        <ul className="  min-h-screen flex flex-col w-full gap-8 ">
-          {data.map((content, index) => {
-            return (
-              <li
-                key={index}
-                className=" drop-shadow-md px-5 bg-gray-300   py-16 rounded-xl"
-              >
-                <figure>
-                  <figcaption>
-                    {
-                      <content.Icon
-                        className={`w-10 h-10 text-sky-500 drop-shadow-md`}
-                      />
-                    }
-                    <h3 className=" text-lg font-medium  text-gray-900 drop-shadow-sm">
-                      {content.title}
-                    </h3>
-                    <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                    <p className=" text-gray-600  text-base font-normal drop-shadow-sm">
-                      {content.content}
-                    </p>
-                  </figcaption>
-                </figure>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
+    <div ref={aboutRef} className="  bg-sky-600 py-20   rounded-t-3xl ">
+      <div className="flex flex-col overflow-hidden gap-4 w-10/12 mx-auto">
+        {/* <section className=" flex w-full text-center justify-start flex-wrap">
+          <h3 className=" text-sky-50 font-semibold text-4xl">
+            Behind The Code
+          </h3>
+        </section> */}
+
+        <section className="">
+          <ul className="  min-h-screen flex flex-col w-full gap-8 ">
+            {data.map((content, index) => {
+              return (
+                <li
+                  key={index}
+                  className=" drop-shadow-md     py-16 rounded-xl"
+                >
+                  <figure>
+                    <figcaption className=" flex flex-col">
+                      {
+                        <content.Icon
+                          className={`w-20 h-20 text-blue-500 drop-shadow-sm`}
+                        />
+                      }
+                      <h3 className=" text-xl font-semibold  text-gray-700 drop-shadow-sm">
+                        {content.title}
+                      </h3>
+                      <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
+                      <p className=" text-gray-100  text-lg font-normal drop-shadow-sm">
+                        {content.content}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </div>
     </div>
   );
 }

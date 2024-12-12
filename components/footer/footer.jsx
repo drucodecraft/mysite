@@ -9,8 +9,8 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="  w-full px-10   pt-24 pb-12 justify-center flex flex-col bg-gray-900   ">
-      <div className=" gap-4 flex flex-col">
+    <footer className="  w-full    pt-24 pb-12 justify-center flex flex-col bg-black   ">
+      <div className=" gap-4 flex flex-col mx-auto w-10/12">
         <section className=" flex   flex-col gap-6 ">
           <article className=" flex-1">
             <p className=" text-center  text-gray-400 text-xl font-light">
@@ -18,12 +18,7 @@ export default function Footer() {
               Design.
             </p>
           </article>
-          <article className="flex-1 flex w-full justify-center ">
-            <button className=" py-2 px-6 rounded-xl bg-gray-950 text-gray-800 flex items-center gap-2 text-lg ">
-              <span className=" font-medium text-gray-200">Email Me</span>
-              <FaRegEnvelope className="  text-gray-50 h-8 w-8" />
-            </button>
-          </article>
+
           <article className=" flex-1   ">
             <div className=" flex flex-row justify-center gap-2 h-full items-center ">
               <FaFacebook

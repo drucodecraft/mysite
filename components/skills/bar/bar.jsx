@@ -7,10 +7,10 @@ export default function Bar({ percentage, skill }) {
   return (
     <div className=" flex flex-col gap-1">
       <section className=" flex w-full justify-between items-center">
-        <p className=" text-gray-600  text-base font-normal drop-shadow-sm">
+        <p className=" text-gray-300  text-base font-normal drop-shadow-sm">
           {skill}
         </p>
-        <p className=" text-gray-400  text-base font-normal drop-shadow-sm">
+        <p className=" text-gray-100  text-base font-normal drop-shadow-sm">
           {percentage}%
         </p>
       </section>

@@ -12,9 +12,9 @@ export default function NavBar() {
     setMoveTo,
   } = useStore();
   const handleClick = (value) => {
-    select(0);
     select(value);
   };
+  const navRef = useRef(null);
   const toggleButtonRef = useRef(null);
   const linksComponentRef = useRef(null);
   useEffect(() => {
@@ -34,13 +34,35 @@ export default function NavBar() {
       }
     }
   }, [toggle]);
+  useEffect(() => {
+    if (navRef.current) {
+      let navBarSection = navRef.current;
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > navBarSection.offsetHeight) {
+          gsap.to(navBarSection, {
+            y: -navBarSection.offsetHeight,
+            opacity: 0,
+            duration: 0.2,
+            ease: "power2.inOut",
+          });
+        } else {
+          gsap.to(navBarSection, {
+            y: 0,
+            opacity: 1,
+            duration: 0.2,
+            ease: "power2.inOut",
+          });
+        }
+      });
+    }
+  }, []);
 
   return (
-    <nav className="  fixed z-50 flex flex-col w-full h-fit">
+    <nav ref={navRef} className="  fixed z-50 flex flex-col w-full h-fit">
       <section className="flex relative  z-10  px-8 py-6 items-center justify-between">
         <div className=" flex items-center font-bold text-3xl">
-          <p className={` text-cyan-500 `}>Simply</p>
-          <p className=" text-white ">Drew</p>.
+          <p className={` text-blue-500 `}>Simply</p>
+          <p className=" text-gray-700 ">Drew</p>.
         </div>
         <div
           ref={toggleButtonRef}
@@ -60,9 +82,9 @@ export default function NavBar() {
       </section>
       <section
         ref={linksComponentRef}
-        className={` opacity-0  absolute min-h-screen w-full bg-slate-600 flex justify-end `}
+        className={` opacity-0  absolute min-h-screen w-full bg-black flex justify-start `}
       >
-        <ul className=" mt-24 mr-8  gap-8 flex flex-col text-xl font-medium text-gray-500 text-end">
+        <ul className=" mt-40 w-10/12 mx-auto  gap-10 flex flex-col text-2xl font-medium text-gray-500 text-start">
           <li
             onClick={() => {
               handleClick(1);
