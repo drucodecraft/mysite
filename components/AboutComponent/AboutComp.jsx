@@ -75,9 +75,9 @@ export default function AboutComp() {
   return (
     <div
       ref={aboutRef}
-      className={`  bg-indigo-500 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
+      className={`  bg-zinc-900 bg-opacity-60 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
     >
-      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-indigo-400 bg-opacity-65  py-8 ">
+      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-zinc-800 bg-opacity-65  py-8 ">
         {/* <section className=" flex w-full text-center justify-center flex-wrap">
           <h3 className=" text-zinc-100 font-semibold text-xl">
             Behind The Code
@@ -90,16 +90,16 @@ export default function AboutComp() {
               return (
                 <li
                   key={index}
-                  className=" w-11/12 pt-4 pb-2 bg-indigo-500 drop-shadow-md mx-auto   rounded-xl"
+                  className=" w-11/12 pt-4 pb-2 bg-zinc-500 bg-opacity-35 drop-shadow-md mx-auto   rounded-xl"
                 >
                   <figure className=" w-11/12 mx-auto">
                     <figcaption className=" flex flex-col">
-                      {<content.Icon className={`w-16 h-16 text-blue-500 `} />}
-                      <h3 className=" text-xl font-semibold  text-indigo-950 ">
+                      {<content.Icon className={`w-16 h-16 text-zinc-500 `} />}
+                      <h3 className=" text-xl font-semibold  text-zinc-950 ">
                         {content.title}
                       </h3>
                       <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                      <p className=" text-indigo-300    ">{content.content}</p>
+                      <p className=" text-zinc-300    ">{content.content}</p>
                     </figcaption>
                   </figure>
                 </li>
