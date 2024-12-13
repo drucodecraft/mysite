@@ -9,30 +9,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Bar from "@/components/skills/bar/bar";
 export default function Skills() {
-  let { selected, select } = useStore();
-
-  const skillsRef = useRef(null);
-
-  useEffect(() => {
-    if (skillsRef.current) {
-      if (selected === 2) {
-        gsap.to(window, {
-          scrollTo: skillsRef.current,
-
-          ease: "power3.inOut",
-        });
-      }
-    }
-    return () => {
-      select(0);
-    };
-  }, [selected]);
-
   return (
-    <div
-      ref={skillsRef}
-      className="   w-full  bg-indigo-300   min-h-screen justify-center relative flex flex-col   "
-    >
+    <div className="   w-full  bg-indigo-300   min-h-screen justify-center relative flex flex-col   ">
       <div className={" w-10/12 mx-auto"}>
         <section className=" flex flex-col gap-5  ">
           <div className=" col-span-6  ">

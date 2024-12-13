@@ -1,48 +1,25 @@
-import React, { useEffect, useRef } from "react";
-import { FaRegCommentDots } from "react-icons/fa";
+import React from "react";
+
 export default function HeroComponent() {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const setHeight = () => {
-      if (heroRef.current) {
-        heroRef.current.style.height = `${window.innerHeight}px`;
-      }
-    };
-    setHeight();
-    window.addEventListener("resize", setHeight);
-    return () => {
-      window.removeEventListener("resize", setHeight);
-    };
-  }, []);
-
   return (
     <div
-      ref={heroRef}
-      className=" relative bg-gradient-to-b w-full bg-black  justify-center  items-center  flex flex-col "
+      style={{ height: "100dvh" }}
+      className=" flex flex-col w-full items-center relative"
     >
-      <div className=" py-2 mx-auto overflow-hidden absolute  bottom-20 flex gap-6 w-11/12  flex-col ">
-        <figure>
-          <figcaption className="flex flex-col gap-1 ">
-            <h3 className=" mx-auto  font-semibold text-center text-4xl text-zinc-200">
-              <span className=" text-5xl font-light text-zinc-900">
-                CRAFTING
-              </span>{" "}
-              Digital Solutions with Precision and Creativity
-            </h3>
-            <p className=" w-10/12 text-center mx-auto text-zinc-700">
-              Welcome! I&apos;m Andrew, a developer focused on crafting
-              efficient and user-centric web solutions. Explore my portfolio to
-              see my work and skills in action.
-            </p>
-            <div className=" mt-4 w-full justify-center flex h-fit">
-              <button className=" outline-zinc-400 outline rounded-md bg-transparent text-gray-200 px-4 py-2">
-                Get in Touch
-              </button>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
+      <figure className="absolute w-11/12  bottom-24">
+        <figcaption className=" flex flex-col gap-2">
+          <h3 className=" text-7xl font-medium  text-center">
+            <span className="text-9xl font-bold text-zinc-100">Code</span>{" "}
+            <span className=" text-zinc-500 font-semibold">That Connects</span>
+          </h3>
+          <p className=" w-10/12 text-center mx-auto text-2xl ">
+            Hi, I Build Things for the Web
+          </p>
+          <button className=" px-5 py-3 rounded-md bg-zinc-900 text-zinc-300 text-lg">
+            Get To Know Me
+          </button>
+        </figcaption>
+      </figure>
     </div>
   );
 }

@@ -1,125 +1,24 @@
-import gsap from "gsap";
-import { useEffect, useRef } from "react";
-import useStore from "@/store/useStore";
-import { Poppins } from "next/font/google";
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--poppins-",
-});
+import React from "react";
 
 export default function NavBar() {
-  let {
-    toggle,
-    toggleActive,
-
-    select,
-
-    setMoveTo,
-  } = useStore();
-  const handleClick = (value) => {
-    select(value);
-  };
-  const navRef = useRef(null);
-  const toggleButtonRef = useRef(null);
-  const linksComponentRef = useRef(null);
-  useEffect(() => {
-    if (toggleButtonRef.current && linksComponentRef.current) {
-      let LinksComp = linksComponentRef.current;
-      let toggleElement = toggleButtonRef.current;
-      if (toggle) {
-        gsap.to(toggleElement.children[0], { y: 6, rotate: 45 });
-        gsap.to(toggleElement.children[1], { opacity: 0 });
-        gsap.to(LinksComp, { alpha: 1 });
-        gsap.to(toggleElement.children[2], { y: -6, rotate: -45 });
-      } else {
-        gsap.to(LinksComp, { alpha: 0 });
-        gsap.to(toggleElement.children[0], { y: 0, rotate: 0 });
-        gsap.to(toggleElement.children[1], { opacity: 1 });
-        gsap.to(toggleElement.children[2], { y: 0, rotate: 0 });
-      }
-    }
-  }, [toggle]);
-  useEffect(() => {
-    if (navRef.current) {
-      let navBarSection = navRef.current;
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > navBarSection.offsetHeight) {
-          gsap.to(navBarSection, {
-            y: -navBarSection.offsetHeight,
-            opacity: 0,
-            duration: 0.2,
-            ease: "power2.inOut",
-          });
-        } else {
-          gsap.to(navBarSection, {
-            y: 0,
-            opacity: 1,
-            duration: 0.2,
-            ease: "power2.inOut",
-          });
-        }
-      });
-    }
-  }, []);
-
   return (
-    <nav
-      ref={navRef}
-      className={` ${poppins.className}  fixed z-50 flex flex-col w-full h-fit `}
-    >
-      <section className="flex relative w-10/12 mx-auto  z-10  py-7 items-center bg-transparent justify-between">
-        <div className=" flex items-center font-black text-2xl">
-          <p className={` text-zinc-200 `}>Simply</p>
-          <p className=" text-zinc-700 ">Drew</p>.
+    <nav className=" absolute flex w-full pt-4">
+      <div className=" w-11/12  mx-auto flex items-center justify-between">
+        <div id="navBrand" className="  flex items-center text-4xl">
+          <p className=" text-zinc-600">Simply</p>
+          <p className=" font-semibold text-zinc-300">
+            Drew<span className=" text-zinc-100 text-5xl">.</span>
+          </p>
         </div>
         <div
-          ref={toggleButtonRef}
-          onClick={() => {
-            if (toggle) {
-              toggleActive(false);
-            } else {
-              toggleActive(true);
-            }
-          }}
-          className={` flex flex-col gap-1 outline outline-zinc-400  outline-1 rounded-lg py-2 px-3 `}
+          id="toggler"
+          className=" py-3 px-2 bg-zinc-600 bg-opacity-30 rounded-md flex flex-col gap-1"
         >
-          <span className=" bg-zinc-500 w-5 h-0.5"></span>
-          <span className=" bg-zinc-500 w-5 h-0.5"></span>
-          <span className=" bg-zinc-500 w-5 h-0.5"></span>
+          <span className=" h-0.5 w-5 bg-zinc-200"></span>
+          <span className=" h-0.5 w-5 bg-zinc-200"></span>
+          <span className=" h-0.5 w-5 bg-zinc-200"></span>
         </div>
-      </section>
-      <section
-        ref={linksComponentRef}
-        className={` opacity-0  absolute min-h-screen w-full bg-zinc-950 flex justify-start `}
-      >
-        <ul className=" mt-40 w-10/12 mx-auto  gap-10 flex flex-col text-2xl font-medium text-gray-500 text-start">
-          <li
-            onClick={() => {
-              handleClick(1);
-              toggleActive(false);
-            }}
-          >
-            Who Am I
-          </li>
-          <li
-            onClick={() => {
-              handleClick(2);
-              toggleActive(false);
-            }}
-          >
-            What I Do
-          </li>
-          <li
-            onClick={() => {
-              handleClick(3);
-              toggleActive(false);
-            }}
-          >
-            ShowCase
-          </li>
-        </ul>
-      </section>
+      </div>
     </nav>
   );
 }

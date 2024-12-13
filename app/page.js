@@ -14,7 +14,6 @@ import { Poppins } from "next/font/google";
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
-  variable: "--poppins-",
 });
 
 export default function Home() {
@@ -41,17 +40,17 @@ export default function Home() {
   return (
     <div
       id="parent"
-      className={`relative overflow-x-hidden  min-h-full w-full  sm:opacity-0 text-lg flex flex-col ${poppins.className}`}
+      className={`relative overflow-x-hidden  min-h-full w-full   text-lg flex flex-col `}
     >
       <NavBar />
       <HeroComponent />
       <AboutComp />
 
-      <Skills />
+      {/* <Skills /> */}
       {/* <Qoute />
       <ProjectsComponent /> */}
-      <Top />
-      <Footer />
+      {/* <Top />
+      <Footer /> */}
     </div>
   );
 }

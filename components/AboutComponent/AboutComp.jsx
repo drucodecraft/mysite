@@ -4,102 +4,61 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "@/store/useStore";
-import { MdPerson, MdCode, MdDesignServices } from "react-icons/md";
-import { Poppins } from "next/font/google";
-const poppins = Poppins({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  subsets: ["latin"],
-  variable: "--poppins-",
-});
+import { MdLightbulb, MdCode, MdDesignServices } from "react-icons/md";
+
 const data = [
-  {
-    title: "Personal Background",
-    content:
-      " I'm a self-taught developer driven by a love for learning and problem-solving. I blend my technical skills and creative vision to craft solutions that resonate. Outside of development, I enjoy exploring how design and functionality intersect in the digital space, always pushing the boundaries of what's possible ",
-    Icon: MdPerson,
-  },
   {
     title: "My Coding Journey",
     content:
-      "Starting with the basics of HTML and CSS, my coding journey has evolved into building complex applications using React and Next.js. Self-driven and resourceful, I've embraced challenges as opportunities to grow and each step has deepened my passion for turning ideas into dynamic web experiences.",
+      "I started my coding adventure because i was curious about how websites worked-and quickly became obsessed. What began as simple HTML and CSS projects evolved into creating complex, interactive applications with React, Next.js, and more. It's been a thrilling ride of learning, debugging, and finally seeing my work come to life!",
     Icon: MdCode,
   },
   {
     title: "Design Philosophy",
     content:
-      "  I believe design should be simple yet impactful, emphasizing usability and clarity. Every decision, from layout to typography, is guided by the goal of delivering an intuitive user experience. For me, great design is where creativity and functionality meet, creating harmony between aesthetics and performance.",
+      "  I think design should be as fun as it is functional. My goal is create websites that are not only visually appealing but also intuitive and user-friendly. Clean, simple, and user-focused bacause a great dsesign should never get in the way of a great experience.",
     Icon: MdDesignServices,
+  },
+  {
+    title: "Why I Love What I Do",
+    content:
+      "For me, coding is a mix of creativity and problem-solving. Every project is a new puzzle to solve, and i love crafting digital solutions that are both practical and delightful to use. It's all about making the web a little bit better, one line of code at a time.",
+    Icon: MdLightbulb,
   },
 ];
 
 export default function AboutComp() {
-  let { setDisplayTop, selected, select } = useStore();
-
-  const aboutRef = useRef(null);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    if (aboutRef.current && gsap) {
-      const AboutElement = aboutRef.current;
-      gsap.to(AboutElement, {
-        scrollTrigger: {
-          trigger: AboutElement,
-          start: "top 50%",
-          end: "bottom 50%",
-
-          onEnter: () => {
-            setDisplayTop(true);
-          },
-          onLeaveBack: () => {
-            setDisplayTop(false);
-          },
-        },
-      });
-    }
-  }, []);
-  useEffect(() => {
-    if (aboutRef.current) {
-      if (selected === 1) {
-        gsap.to(window, {
-          scrollTo: aboutRef.current,
-
-          ease: "power3.inOut",
-        });
-      }
-    }
-    return () => {
-      select(0);
-    };
-  }, [selected]);
-
   return (
     <div
-      ref={aboutRef}
-      className={`  bg-zinc-900 bg-opacity-60 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
+      className={`  bg-zinc-700 bg-opacity-60 flex w-full h-full flex-col   rounded-t-3xl`}
     >
-      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-zinc-800 bg-opacity-65  py-8 ">
-        {/* <section className=" flex w-full text-center justify-center flex-wrap">
-          <h3 className=" text-zinc-100 font-semibold text-xl">
-            Behind The Code
-          </h3>
-        </section> */}
-
-        <section className="">
-          <ul className="  min-h-screen flex flex-col w-full gap-8 ">
+      <div className=" w-11/12 pt-8 pb-8 mx-auto">
+        <figure>
+          <figcaption className=" flex flex-col gap-2">
+            <h3 className=" text-zinc-900 text-2xl font-bold">
+              A little About Me
+            </h3>
+            <p className=" text-zinc-500 pl-1">
+              I&apos;m Andrew-a self-taught developer who&apos;s passionate
+              about turning ideas into interactive, beautiful web experiences.
+              When i&apos;m not coding, you can catch me experimenting with new
+              tech.
+            </p>
+          </figcaption>
+        </figure>
+      </div>
+      <div className="flex  flex-col overflow-hidden gap-4 w-11/12  mx-auto rounded-2xl bg-gradient-to-tl from-zinc-700 via-zinc-600 to-zinc-800 bg-opacity-65  py-8 ">
+        <section className=" w-11/12  mx-auto ">
+          <ul className=" flex flex-col pb-4 gap-8 px-2  ">
             {data.map((content, index) => {
               return (
-                <li
-                  key={index}
-                  className=" w-11/12 pt-4 pb-2 bg-zinc-500 bg-opacity-35 drop-shadow-md mx-auto   rounded-xl"
-                >
-                  <figure className=" w-11/12 mx-auto">
-                    <figcaption className=" flex flex-col">
-                      {<content.Icon className={`w-16 h-16 text-zinc-500 `} />}
-                      <h3 className=" text-xl font-semibold  text-zinc-950 ">
-                        {content.title}
-                      </h3>
-                      <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                      <p className=" text-zinc-300    ">{content.content}</p>
+                <li key={index} className=" ">
+                  <figure className="">
+                    <figcaption className=" ">
+                      {<content.Icon className={` h-8 w-8 text-zinc-800`} />}
+                      <h3 className=" text-xl ">{content.title}</h3>
+                      <hr className=" border-t-zinc-700 w-full my-2  " />
+                      <p className=" text-zinc-500  ">{content.content}</p>
                     </figcaption>
                   </figure>
                 </li>
@@ -108,6 +67,7 @@ export default function AboutComp() {
           </ul>
         </section>
       </div>
+      <div id="bottom space" className=" py-8"></div>
     </div>
   );
 }
