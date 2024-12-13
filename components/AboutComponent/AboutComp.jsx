@@ -75,9 +75,9 @@ export default function AboutComp() {
   return (
     <div
       ref={aboutRef}
-      className={`  bg-indigo-600 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
+      className={`  bg-indigo-500 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
     >
-      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-indigo-500 bg-opacity-65  py-8 ">
+      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-indigo-400 bg-opacity-65  py-8 ">
         {/* <section className=" flex w-full text-center justify-center flex-wrap">
           <h3 className=" text-zinc-100 font-semibold text-xl">
             Behind The Code
@@ -90,7 +90,7 @@ export default function AboutComp() {
               return (
                 <li
                   key={index}
-                  className=" w-11/12 pt-4 pb-2 bg-indigo-600 drop-shadow-md mx-auto   rounded-xl"
+                  className=" w-11/12 pt-4 pb-2 bg-indigo-500 drop-shadow-md mx-auto   rounded-xl"
                 >
                   <figure className=" w-11/12 mx-auto">
                     <figcaption className=" flex flex-col">
