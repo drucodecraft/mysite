@@ -31,20 +31,18 @@ export default function Skills() {
   return (
     <div
       ref={skillsRef}
-      className="   w-full  bg-sky-600   min-h-screen justify-center flex flex-col   "
+      className="   w-full  bg-indigo-300   min-h-screen justify-center relative flex flex-col   "
     >
       <div className={" w-10/12 mx-auto"}>
         <section className=" flex flex-col gap-5  ">
-          <div className=" ">
-            <h2 className=" text-white font-semibold text-4xl">My Expertise</h2>
-          </div>
-          <div className=" col-span-6 ">
-            <p className=" text-gray-200  text-lg font-normal drop-shadow-sm">
+          <div className=" col-span-6  ">
+            <p className=" text-zinc-600  text-lg font-normal drop-shadow-sm">
               From Crafting Clean Code To Designing Intuitive User Interfaces,
               My Skillset Is Built For Creating Web Experiences. Here&apos;s A
               Breakdown Of My Expertise.
             </p>
           </div>
+          <hr className=" w-full border-t-indigo-200 border-t-2" />
           <div className=" col-span-6  ">
             <ul className=" flex flex-col gap-4 lg:gap-2">
               {[
@@ -61,7 +59,7 @@ export default function Skills() {
             </ul>
           </div>
         </section>
-        <hr className="  border-t-sky-500 drop-shadow-lg my-2  flex w-full " />
+
         <div className="  flex justify-center">
           <ul className=" flex py-2 px-2  w-full text-base overflow-hidden gap-2 flex-wrap">
             <li

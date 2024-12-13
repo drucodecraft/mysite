@@ -10,6 +10,12 @@ import ProjectsComponent from "@/components/Projects/ProjectsComponent";
 import Footer from "@/components/footer/footer";
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--poppins-",
+});
 
 export default function Home() {
   useEffect(() => {
@@ -35,17 +41,15 @@ export default function Home() {
   return (
     <div
       id="parent"
-      className="relative overflow-x-hidden bg-gray-900 min-h-full w-full  sm:opacity-0 text-lg flex flex-col"
+      className={`relative overflow-x-hidden  min-h-full w-full  sm:opacity-0 text-lg flex flex-col ${poppins.className}`}
     >
       <NavBar />
       <HeroComponent />
       <AboutComp />
-      <div className="w-10/12 mx-auto bg">
-        <hr className=" w-full  border-t-sky-100 border-t-2" />
-      </div>
+
       <Skills />
-      <Qoute />
-      <ProjectsComponent />
+      {/* <Qoute />
+      <ProjectsComponent /> */}
       <Top />
       <Footer />
     </div>

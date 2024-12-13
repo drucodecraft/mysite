@@ -1,6 +1,12 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import useStore from "@/store/useStore";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--poppins-",
+});
 
 export default function NavBar() {
   let {
@@ -58,11 +64,14 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav ref={navRef} className="  fixed z-50 flex flex-col w-full h-fit">
-      <section className="flex relative  z-10  px-8 py-6 items-center justify-between">
-        <div className=" flex items-center font-bold text-3xl">
-          <p className={` text-blue-500 `}>Simply</p>
-          <p className=" text-gray-700 ">Drew</p>.
+    <nav
+      ref={navRef}
+      className={` ${poppins.className}  fixed z-50 flex flex-col w-full h-fit `}
+    >
+      <section className="flex relative w-10/12 mx-auto  z-10  py-7 items-center bg-transparent justify-between">
+        <div className=" flex items-center font-black text-2xl">
+          <p className={` text-zinc-200 `}>Simply</p>
+          <p className=" text-zinc-700 ">Drew</p>.
         </div>
         <div
           ref={toggleButtonRef}
@@ -73,16 +82,16 @@ export default function NavBar() {
               toggleActive(true);
             }
           }}
-          className={` flex flex-col gap-1 outline outline-gray-400  outline-1 rounded-lg py-2 px-3 `}
+          className={` flex flex-col gap-1 outline outline-zinc-400  outline-1 rounded-lg py-2 px-3 `}
         >
-          <span className=" bg-gray-300 w-5 h-0.5"></span>
-          <span className=" bg-gray-300 w-5 h-0.5"></span>
-          <span className=" bg-gray-300 w-5 h-0.5"></span>
+          <span className=" bg-zinc-500 w-5 h-0.5"></span>
+          <span className=" bg-zinc-500 w-5 h-0.5"></span>
+          <span className=" bg-zinc-500 w-5 h-0.5"></span>
         </div>
       </section>
       <section
         ref={linksComponentRef}
-        className={` opacity-0  absolute min-h-screen w-full bg-black flex justify-start `}
+        className={` opacity-0  absolute min-h-screen w-full bg-zinc-950 flex justify-start `}
       >
         <ul className=" mt-40 w-10/12 mx-auto  gap-10 flex flex-col text-2xl font-medium text-gray-500 text-start">
           <li

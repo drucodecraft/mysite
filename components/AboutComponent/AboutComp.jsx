@@ -5,6 +5,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "@/store/useStore";
 import { MdPerson, MdCode, MdDesignServices } from "react-icons/md";
+import { Poppins } from "next/font/google";
+const poppins = Poppins({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  subsets: ["latin"],
+  variable: "--poppins-",
+});
 const data = [
   {
     title: "Personal Background",
@@ -67,10 +73,13 @@ export default function AboutComp() {
   }, [selected]);
 
   return (
-    <div ref={aboutRef} className="  bg-sky-600 py-20   rounded-t-3xl ">
-      <div className="flex flex-col overflow-hidden gap-4 w-10/12 mx-auto">
-        {/* <section className=" flex w-full text-center justify-start flex-wrap">
-          <h3 className=" text-sky-50 font-semibold text-4xl">
+    <div
+      ref={aboutRef}
+      className={`  bg-indigo-600 flex w-full h-full py-16 rounded-t-3xl ${poppins.className}`}
+    >
+      <div className="flex flex-col overflow-hidden gap-4 w-11/12 px-2 mx-auto rounded-2xl bg-indigo-500 bg-opacity-65  py-8 ">
+        {/* <section className=" flex w-full text-center justify-center flex-wrap">
+          <h3 className=" text-zinc-100 font-semibold text-xl">
             Behind The Code
           </h3>
         </section> */}
@@ -81,22 +90,16 @@ export default function AboutComp() {
               return (
                 <li
                   key={index}
-                  className=" drop-shadow-md     py-16 rounded-xl"
+                  className=" w-11/12 pt-4 pb-2 bg-indigo-600 drop-shadow-md mx-auto   rounded-xl"
                 >
-                  <figure>
+                  <figure className=" w-11/12 mx-auto">
                     <figcaption className=" flex flex-col">
-                      {
-                        <content.Icon
-                          className={`w-20 h-20 text-blue-500 drop-shadow-sm`}
-                        />
-                      }
-                      <h3 className=" text-xl font-semibold  text-gray-700 drop-shadow-sm">
+                      {<content.Icon className={`w-16 h-16 text-blue-500 `} />}
+                      <h3 className=" text-xl font-semibold  text-indigo-950 ">
                         {content.title}
                       </h3>
                       <hr className=" drop-shadow-md max-w-8 border-t-sky-500 my-2 " />
-                      <p className=" text-gray-100  text-lg font-normal drop-shadow-sm">
-                        {content.content}
-                      </p>
+                      <p className=" text-indigo-300    ">{content.content}</p>
                     </figcaption>
                   </figure>
                 </li>

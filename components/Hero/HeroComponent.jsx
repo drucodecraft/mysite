@@ -6,43 +6,29 @@ export default function HeroComponent() {
   return (
     <div
       ref={hero}
-      className=" relative bg-gradient-to-b w-full bg-black min-h-screen justify-center  flex flex-col "
+      className=" relative bg-gradient-to-b w-full bg-black min-h-screen justify-center items-center  flex flex-col "
     >
-      <div className=" mx-auto overflow-hidden flex gap-6 w-10/12  flex-col ">
-        <section className="  flex flex-col gap-2">
-          <h4 className="font-light flex flex-wrap  text-sky-600    text-5xl">
-            <span className=" text-gray-600 font-bold  "> Frontend</span>
-            <span className="font-semibold text-5xl ">Developer</span>
-            <span className="text-white">.</span>
-          </h4>
-          <h1 className="  text-base font-medium text-gray-400 ">
-            CRAFTING CLEAN, INTUITIVE, AND RESPONSIVE WEB EXPERIENCES
-          </h1>
-        </section>
-        <section className=" ">
-          <button className=" bg-sky-600 py-2 px-6 rounded-xl  flex items-center gap-2">
-            <span className=" text-white text-lg font-medium">
-              {" "}
-              Let&apos;s Talk
-            </span>
-            <FaRegCommentDots className=" text-gray-100 h-8 w-8" />
-          </button>
-        </section>
-        <section
-          id="animated-section "
-          className=" font-light text-gray-400  flex-col flex  py-8 "
-        >
-          <div className=" w-full block">
-            <h3 className=" font-semibold text-lg text-sky-600">
-              Little About Me
+      <div className=" py-2 mx-auto overflow-hidden absolute bottom-10 flex gap-6 w-11/12  flex-col ">
+        <figure>
+          <figcaption className="flex flex-col gap-1 ">
+            <h3 className="w-11/12 mx-auto  font-semibold text-center text-3xl text-zinc-200">
+              <span className=" text-5xl font-black text-indigo-600">
+                CRAFTING
+              </span>{" "}
+              Digital Solutions with Precision and Creativity
             </h3>
-            <p className=" text-lg font-normal">
-              I&apos;m Andrew, passionate about creating beautiful,
-              user-friendly interfaces. When I&apos;m not coding, you&apos;ll
-              find me exploring new tech or enjoying outdoor.
+            <p className=" w-10/12 text-center mx-auto text-zinc-700">
+              Welcome! I&apos;m Andrew, a developer focused on crafting
+              efficient and user-centric web solutions. Explore my portfolio to
+              see my work and skills in action.
             </p>
-          </div>
-        </section>
+            <div className=" mt-4 w-full justify-center flex h-fit">
+              <button className=" outline-indigo-600 outline rounded-md bg-transparent text-gray-200 px-4 py-2">
+                Get in Touch
+              </button>
+            </div>
+          </figcaption>
+        </figure>
       </div>
     </div>
   );
