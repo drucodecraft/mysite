@@ -30,15 +30,15 @@ const data = [
 export default function AboutComp() {
   return (
     <div
-      className={` relative -top-5  bg-zinc-700  flex w-full h-full flex-col pb-10   rounded-t-3xl`}
+      className={` relative mt-24  bg-black-900  flex w-full h-full flex-col pb-10   rounded-t-3xl`}
     >
-      <div className=" w-10/12 pt-20 pb-8 mx-auto">
+      <div className=" w-10/12 pt-36 pb-36 mx-auto">
         <figure>
           <figcaption className=" flex flex-col gap-2">
-            <h3 className=" text-zinc-400 text-2xl font-bold">
+            <h3 className="  w-fit ml-auto bg-gradient-to-br from-teal-500 via-teal-400 to-teal-600 text-transparent bg-clip-text text-3xl font-bold">
               A little About Me
             </h3>
-            <p className=" text-zinc-500 pl-1">
+            <p className=" text-zinc-300 pl-1 text-end text-lg">
               I&apos;m Andrew-a self-taught developer who&apos;s passionate
               about turning ideas into interactive, beautiful web experiences.
               When i&apos;m not coding, you can catch me experimenting with new
@@ -47,20 +47,20 @@ export default function AboutComp() {
           </figcaption>
         </figure>
       </div>
-      <div className="flex  flex-col overflow-hidden gap-4 w-11/12  mx-auto rounded-2xl bg-gradient-to-tl from-zinc-700 via-zinc-600 to-zinc-800 bg-opacity-65  py-8 ">
+      <div className="flex  flex-col overflow-hidden gap-4 w-11/12  mx-auto rounded-2xl shadow-sm shadow-teal-400 bg-gradient-to-tl from-black-700 via-black-600 to-black-800 bg-opacity-65  py-8 ">
         <section className=" w-11/12  mx-auto ">
-          <ul className=" flex flex-col pb-4 gap-8 px-2  ">
+          <ul className=" flex flex-col py-14 gap-14 px-2  ">
             {data.map((content, index) => {
               return (
                 <li key={index} className=" ">
                   <figure className="">
                     <figcaption className=" flex  flex-col ">
                       {<content.Icon className={` h-8 w-8 text-teal-500`} />}
-                      <h3 className=" font-semibold text-zinc-900 text-lg ">
+                      <h3 className=" font-semibold text-slate-900 text-lg ">
                         {content.title}
                       </h3>
                       <hr className=" border-t-zinc-500 w-full  my-2 shadow " />
-                      <p className=" w-11/12 text-zinc-500 text-end ml-auto  ">
+                      <p className=" w-11/12 text-zinc-400 text-lg text-end ml-auto  ">
                         {content.content}
                       </p>
                     </figcaption>
