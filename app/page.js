@@ -46,7 +46,7 @@ export default function Home() {
       <HeroComponent />
       <AboutComp />
 
-      {/* <Skills /> */}
+      <Skills />
       {/* <Qoute />
       <ProjectsComponent /> */}
       {/* <Top />

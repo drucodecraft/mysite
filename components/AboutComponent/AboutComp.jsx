@@ -30,12 +30,12 @@ const data = [
 export default function AboutComp() {
   return (
     <div
-      className={`  bg-zinc-700 bg-opacity-60 flex w-full h-full flex-col   rounded-t-3xl`}
+      className={` relative -top-5  bg-zinc-700  flex w-full h-full flex-col pb-10   rounded-t-3xl`}
     >
-      <div className=" w-11/12 pt-8 pb-8 mx-auto">
+      <div className=" w-10/12 pt-20 pb-8 mx-auto">
         <figure>
           <figcaption className=" flex flex-col gap-2">
-            <h3 className=" text-zinc-900 text-2xl font-bold">
+            <h3 className=" text-zinc-400 text-2xl font-bold">
               A little About Me
             </h3>
             <p className=" text-zinc-500 pl-1">
@@ -54,11 +54,15 @@ export default function AboutComp() {
               return (
                 <li key={index} className=" ">
                   <figure className="">
-                    <figcaption className=" ">
-                      {<content.Icon className={` h-8 w-8 text-zinc-800`} />}
-                      <h3 className=" text-xl ">{content.title}</h3>
-                      <hr className=" border-t-zinc-700 w-full my-2  " />
-                      <p className=" text-zinc-500  ">{content.content}</p>
+                    <figcaption className=" flex  flex-col ">
+                      {<content.Icon className={` h-8 w-8 text-teal-500`} />}
+                      <h3 className=" font-semibold text-zinc-900 text-lg ">
+                        {content.title}
+                      </h3>
+                      <hr className=" border-t-zinc-500 w-full  my-2 shadow " />
+                      <p className=" w-11/12 text-zinc-500 text-end ml-auto  ">
+                        {content.content}
+                      </p>
                     </figcaption>
                   </figure>
                 </li>
