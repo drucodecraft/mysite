@@ -3,7 +3,7 @@ import React from "react";
 export default function HeroComponent() {
   return (
     <div className=" flex flex-col min-h-screen  bg-black-950 w-full items-center relative bg-gray-200">
-      <figure className="absolute w-11/12  bottom-48">
+      <figure className="absolute w-11/12  bottom-32">
         <figcaption className=" flex flex-col gap-2">
           <h3 className=" text-5xl font-semibold  text-center text-zinc-700">
             <span className=" text-8xl text-teal-400 font-black  ">CODE</span>,{" "}
