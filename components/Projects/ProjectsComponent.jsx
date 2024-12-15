@@ -1,19 +1,14 @@
-import React, { useRef, useEffect } from "react";
-import useStore from "@/store/useStore";
+"use client";
 import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
+
 export default function ProjectsComponent() {
   return (
-    <div className=" bg-sky-600 text-gray-500  py-20">
-      <div className=" flex flex-col w-10/12 mx-auto">
-        <h2 className=" bg-sky-50 py-2 rounded-t-xl text-2xl mb-4 font-semibold text-center text-sky-600 drop-shadow-md">
-          Projects
-        </h2>
-        <p className=" text-gray-200 text-center text-lg font-normal drop-shadow-sm">
-          I&apos;m currently working on projects that will demonstrate my
-          expertise. Stay tuned!
-        </p>
-      </div>
+    <div className=" h-full flex bg-gray-200">
+      <section className=" mt-16 w-full flex items-center h-20">
+        <div className=" text-4xl text-gray-100 font-bold">Project</div>
+      </section>
     </div>
   );
 }

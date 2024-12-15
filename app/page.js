@@ -5,7 +5,7 @@ import HeroComponent from "@/components/Hero/HeroComponent";
 import Top from "@/components/ScrollTopComponent/Top";
 import AboutComp from "@/components/AboutComponent/AboutComp";
 import Skills from "@/components/skills/skills";
-import Qoute from "@/components/qoute/qoute";
+
 import ProjectsComponent from "@/components/Projects/ProjectsComponent";
 import Footer from "@/components/footer/footer";
 import { useEffect, useRef } from "react";
@@ -45,10 +45,8 @@ export default function Home() {
       <NavBar />
       <HeroComponent />
       <AboutComp />
-
       <Skills />
-      {/* <Qoute />
-      <ProjectsComponent /> */}
+      <ProjectsComponent />
       {/* <Top />
       <Footer /> */}
     </div>

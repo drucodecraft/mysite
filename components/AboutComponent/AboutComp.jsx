@@ -34,12 +34,12 @@ export default function AboutComp() {
     >
       <div className=" w-11/12 pt-24 pb-24 mx-auto">
         <figure>
-          <figcaption className=" flex flex-col gap-4">
-            <h3 className="  w-fit mx-auto text-teal-400 text-3xl font-bold">
+          <figcaption className=" flex flex-col gap-10">
+            <h3 className="  w-fit mx-auto text-teal-400 text-2xl font-black">
               A little About Me
             </h3>
-            <p className=" text-zinc-400 text-center pl-1  mx-auto  text-xl">
-              I&apos;m Andrew-a self-taught developer who&apos;s passionate
+            <p className=" text-zinc-400 text-center pl-1  mx-auto  text-lg">
+              I&apos;m Andrew, a self-taught developer who&apos;s passionate
               about turning ideas into interactive, beautiful web experiences.
               When i&apos;m not coding, you can catch me experimenting with new
               tech.
@@ -47,20 +47,20 @@ export default function AboutComp() {
           </figcaption>
         </figure>
       </div>
-      <div className="flex  flex-col overflow-hidden gap-4 w-11/12  mx-auto rounded-2xl shadow-sm shadow-teal-400 bg-zinc-600 bg-opacity-30  py-4 ">
+      <div className="flex  flex-col overflow-hidden  w-11/12  mx-auto rounded-2xl shadow-sm shadow-teal-400 bg-zinc-600 bg-opacity-30  py-4 ">
         <section className=" w-11/12  mx-auto ">
-          <ul className=" flex flex-col py-14 gap-14 px-2  ">
+          <ul className=" flex flex-col py-14 gap-20 px-2  ">
             {data.map((content, index) => {
               return (
                 <li key={index} className=" ">
                   <figure className="">
-                    <figcaption className=" flex  flex-col ">
+                    <figcaption className=" flex  flex-col gap-2 ">
                       {<content.Icon className={` h-10 w-10 text-teal-500`} />}
-                      <h3 className=" font-semibold text-white text-2xl ">
+                      <h3 className=" font-semibold text-white text-xl ">
                         {content.title}
                       </h3>
-                      <hr className=" border-t-zinc-500 w-full  my-2 shadow " />
-                      <p className=" w-11/12 text-zinc-400 text-xl text-end ml-auto  ">
+                      <hr className=" border-t-zinc-400 w-full  my-2 shadow " />
+                      <p className=" w-11/12 text-zinc-400 text-lg text-end ml-auto  ">
                         {content.content}
                       </p>
                     </figcaption>

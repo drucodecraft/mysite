@@ -6,7 +6,7 @@ export default function NavBar() {
       <div className=" w-10/12  mx-auto flex items-center justify-between">
         <div id="navBrand" className="  flex items-center text-2xl font-black">
           <p className=" text-zinc-400 ">Simply</p>
-          <p className="  text-zinc-300">Drew</p>
+          <p className="  text-zinc-50">Drew</p>
         </div>
         <div
           id="toggler"
