@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import {
   FaFacebook,
@@ -9,39 +10,21 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="  w-full    pt-24 pb-12 justify-center flex flex-col bg-black   ">
-      <div className=" gap-4 flex flex-col mx-auto w-10/12">
-        <section className=" flex   flex-col gap-6 ">
-          <article className=" flex-1">
-            <p className=" text-center  text-gray-400 text-xl font-light">
-              Building Modern Web Experiences With Clean Code And Innovative
-              Design.
-            </p>
-          </article>
-
-          <article className=" flex-1   ">
-            <div className=" flex flex-row justify-center gap-2 h-full items-center ">
-              <FaFacebook
-                className={
-                  "min-w-10 min-h-10 drop-shadow-md text-white cursor-pointer"
-                }
-              />
-              <FaWhatsapp
-                className={"min-w-10 min-h-10 drop-shadow-md text-white  "}
-              />
-              <FaLinkedin
-                className={"min-w-10 min-h-10 drop-shadow-md text-white  "}
-              />
-            </div>
-          </article>
-        </section>
-        <section className=" flex w-full justify-center">
-          <p className=" text-gray-500 text-center text-base drop-shadow-sm font-normal">
-            {" "}
-            @2024 Simply Drew. All rights reserved
-          </p>
-        </section>
-      </div>
+    <footer className="  w-full    h-full flex-col  flex  bg-gray-200 py-8 text-center justify-center   ">
+      <p className=" flex flex-col text-xl">
+        <span className=" text-zinc-400 w-10/12 mx-auto">
+          Let&apos;s build something amazing together{" "}
+        </span>
+        <Link
+          className=" bg-zinc-800 text-lg px-5 py-3 mt-8 mx-auto w-10/12 rounded-md text-zinc-50 font-medium "
+          href={"mailto:codecraftdru@gmail.com"}
+        >
+          Get in touch!
+        </Link>
+      </p>
+      <p className=" mt-2 text-lg text-zinc-800">
+        &copy;{new Date().getUTCFullYear()} SimplyDrew.
+      </p>
     </footer>
   );
 }

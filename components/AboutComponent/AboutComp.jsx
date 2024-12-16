@@ -34,11 +34,12 @@ export default function AboutComp() {
     >
       <div className=" w-11/12 pt-24 pb-24 mx-auto">
         <figure>
-          <figcaption className=" flex flex-col gap-10">
-            <h3 className="  w-fit mx-auto text-teal-400 text-2xl font-black">
+          <figcaption className=" flex flex-col gap-2">
+            <h3 className="  w-8/12 text-center mx-auto text-teal-400 text-3xl font-black">
               A little About Me
             </h3>
-            <p className=" text-zinc-400 text-center pl-1  mx-auto  text-lg">
+            {/* <hr className=" mt-2   shadow-sm border-zinc-50 mx-auto w-4/12" /> */}
+            <p className=" mt-5 text-zinc-400 text-center pl-1  mx-auto  text-lg">
               I&apos;m Andrew, a self-taught developer who&apos;s passionate
               about turning ideas into interactive, beautiful web experiences.
               When i&apos;m not coding, you can catch me experimenting with new

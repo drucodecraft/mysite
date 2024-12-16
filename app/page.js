@@ -47,8 +47,8 @@ export default function Home() {
       <AboutComp />
       <Skills />
       <ProjectsComponent />
-      {/* <Top />
-      <Footer /> */}
+      {/* <Top /> */}
+      <Footer />
     </div>
   );
 }
