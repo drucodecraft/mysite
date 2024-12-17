@@ -24,6 +24,9 @@ module.exports = {
           950: "#0b0f1a",
         },
       },
+      screens: {
+        xs: "475px",
+      },
     },
   },
   plugins: [],

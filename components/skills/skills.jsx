@@ -1,8 +1,44 @@
-import React from "react";
+"use client";
+
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import useStore from "@/store/useStore";
+import React, { useEffect, useRef } from "react";
 
 export default function Skills() {
+  const { selected, setSelected } = useStore();
+
+  const skillsRef = useRef(null);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+  }, []);
+  useEffect(() => {
+    const animationList = [];
+    if (skillsRef.current) {
+      if (selected == 2) {
+        const animation = gsap.to(window, {
+          scrollTo: {
+            y: skillsRef.current,
+            offsetY: 50,
+          },
+          ease: "power2.inOut",
+        });
+        animationList.push(animation);
+      }
+    }
+    return () => {
+      setSelected(0);
+      // animationList.forEach((animation) => {
+      //   animation.kill();
+      // });
+    };
+  }, [selected]);
+
   return (
-    <div className=" relative -top-12 rounded-t-3xl h-full flex flex-col gap-8 bg-gray-300 pt-36 pb-18">
+    <div
+      ref={skillsRef}
+      className=" relative -top-12 rounded-t-3xl h-full flex flex-col gap-8 bg-gray-300 pt-36 pb-18"
+    >
       <section className="  w-10/12  flex flex-col gap-2 mx-auto">
         <h3 className=" text-3xl text-center  font-black  text-zinc-600">
           The Magic Behind The Scenes

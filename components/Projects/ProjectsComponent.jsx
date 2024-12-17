@@ -16,7 +16,12 @@ export default function ProjectsComponent() {
     }
   }, []);
   useEffect(() => {
-    if (firstContainer.current && projectGTextRef.current) {
+    if (
+      firstContainer.current &&
+      projectGTextRef.current &&
+      lastContainerRef.current &&
+      wordLastRef.current
+    ) {
       const container = firstContainer.current;
       const text = projectGTextRef.current;
       const timeline = gsap.timeline({
@@ -32,12 +37,10 @@ export default function ProjectsComponent() {
         { x: "-100%", duration: 1 },
         { x: "0%", duration: 1 }
       );
-    }
-
-    if (lastContainerRef.current && wordLastRef.current) {
+      // Second
       const container2 = lastContainerRef.current;
-      const text = wordLastRef.current;
-      const timeline = gsap.timeline({
+      const text2 = wordLastRef.current;
+      const timeline2 = gsap.timeline({
         scrollTrigger: {
           trigger: container2,
           start: "top 100%",
@@ -45,11 +48,15 @@ export default function ProjectsComponent() {
           scrub: true,
         },
       });
-      timeline.fromTo(
-        text,
+      timeline2.fromTo(
+        text2,
         { x: "100%", duration: 1 },
         { x: "0%", duration: 1 }
       );
+      return () => {
+        timeline.kill();
+        timeline2.kill();
+      };
     }
   }, []);
   return (

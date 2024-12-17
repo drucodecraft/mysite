@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useStore from "@/store/useStore";
 import { MdLightbulb, MdCode, MdDesignServices } from "react-icons/md";
@@ -28,18 +29,88 @@ const data = [
 ];
 
 export default function AboutComp() {
+  let { selected, setSelected } = useStore();
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const aboutRef = useRef(null);
+  const contentRef = useRef(null);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    const animationsList = [];
+    if (titleRef.current && containerRef.current) {
+      const elements = [
+        { ref: titleRef, start: "top 80%", end: "top 40%" },
+        { ref: contentRef, start: "top 70%", end: "top 30%" },
+      ];
+      elements.forEach(({ ref, start, end }) => {
+        const animation = gsap.fromTo(
+          ref.current,
+          { opacity: 0, y: 200 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start,
+              end,
+              scrub: true,
+            },
+          }
+        );
+        animationsList.push(animation);
+      });
+    }
+    return () => {
+      animationsList.forEach((animation) => {
+        animation?.kill();
+      });
+      ScrollTrigger.getAll().forEach((trigger) => {
+        trigger.kill();
+      });
+    };
+  }, []);
+  useEffect(() => {
+    const animationList = [];
+    if (aboutRef.current) {
+      if (selected == 1) {
+        const animation = gsap.to(window, {
+          scrollTo: {
+            y: aboutRef.current,
+            offsetY: 50,
+          },
+          ease: "power2.inOut",
+        });
+        animationList.push(animation);
+      }
+    }
+    return () => {
+      setSelected(0);
+      // animationList.forEach((animation) => {
+      //   animation.kill();
+      // });
+    };
+  }, [selected]);
   return (
     <div
+      ref={aboutRef}
       className={` relative mt-24  bg-zinc-500  flex w-full h-full flex-col pb-10   rounded-t-3xl`}
     >
-      <div className=" w-11/12 pt-24 pb-24 mx-auto">
+      <div ref={containerRef} className=" w-11/12 pt-36 pb-24 mx-auto">
         <figure>
           <figcaption className=" flex flex-col gap-2">
-            <h3 className="  w-8/12 text-center mx-auto text-teal-400 text-3xl font-black">
+            <h3
+              ref={titleRef}
+              className="  w-8/12 text-center mx-auto text-teal-400 text-3xl font-black"
+            >
               A little About Me
             </h3>
             {/* <hr className=" mt-2   shadow-sm border-zinc-50 mx-auto w-4/12" /> */}
-            <p className=" mt-5 text-zinc-400 text-center pl-1  mx-auto  text-lg">
+            <p
+              ref={contentRef}
+              className=" mt-5 text-zinc-400 text-center pl-1  mx-auto  text-lg"
+            >
               I&apos;m Andrew, a self-taught developer who&apos;s passionate
               about turning ideas into interactive, beautiful web experiences.
               When i&apos;m not coding, you can catch me experimenting with new

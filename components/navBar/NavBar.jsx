@@ -1,10 +1,11 @@
 "use client";
 import gsap from "gsap";
-
+import useStore from "@/store/useStore";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function NavBar() {
-  let [toggle, setToggle] = useState(false);
+  let { toggle, setToggle } = useStore();
+
   const handleToggle = () => {
     if (toggle) {
       setToggle(false);
@@ -17,40 +18,66 @@ export default function NavBar() {
     if (toggleRef.current) {
       const toggler = toggleRef.current;
       if (toggle) {
-        gsap.to(toggler.children[0], {
+        document.body.style.overflowY = "hidden";
+        let animation = gsap.timeline();
+        animation.to(toggler.children[0], {
           y: 6,
-          duration: 0.2,
+          duration: 0.05,
           rotate: 45,
         });
-        gsap.to(toggler.children[1], {
-          opacity: 0,
-          duration: 0.2,
-        });
-        gsap.to(toggler.children[2], {
-          y: -6,
-          duration: 0.2,
-          rotate: -45,
-        });
+        animation.to(
+          toggler.children[1],
+          {
+            opacity: 0,
+            duration: 0.05,
+          },
+          -0.05
+        );
+        animation.to(
+          toggler.children[2],
+          {
+            y: -6,
+            duration: 0.05,
+            rotate: -45,
+          },
+          -0.1
+        );
+        return () => {
+          animation.kill();
+        };
       } else {
-        gsap.to(toggler.children[0], {
+        document.body.style.overflowY = "scroll";
+        let animation = gsap.timeline();
+        animation.to(toggler.children[0], {
           y: 0,
-          duration: 0.2,
+          duration: 0.05,
           rotate: 0,
         });
-        gsap.to(toggler.children[1], {
-          opacity: 1,
-          duration: 0.2,
-        });
-        gsap.to(toggler.children[2], {
-          y: 0,
-          duration: 0.2,
-          rotate: 0,
-        });
+        animation.to(
+          toggler.children[1],
+          {
+            opacity: 1,
+            duration: 0.05,
+          },
+          -0.05
+        );
+        animation.to(
+          toggler.children[2],
+          {
+            y: 0,
+            duration: 0.05,
+            rotate: 0,
+          },
+          -0.1
+        );
+        return () => {
+          animation.kill();
+        };
       }
     }
   }, [toggle]);
   return (
-    <nav className="z-50 absolute flex w-full pt-4">
+    <nav className="z-40 absolute flex w-full pt-4">
       <div className=" w-10/12  mx-auto flex items-center justify-between">
         <div id="navBrand" className="  flex items-center text-2xl font-black">
           <p className=" text-zinc-600 ">Simply</p>
