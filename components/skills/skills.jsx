@@ -87,7 +87,7 @@ export default function Skills() {
                   Node.js and Express.js to create efficient, scalable
                   server-side solutions. Databases like MongoDb and MySQL ensure
                   data is handled securely and reliably, while seamless API
-                  intergrations connect evrything together, making the
+                  intergrations connect everything together, making the
                   experience feel effortless.
                 </p>
               </figcaption>
