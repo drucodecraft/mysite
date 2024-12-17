@@ -42,7 +42,7 @@ export default function Home() {
       id="parent"
       className={`relative overflow-x-hidden  min-h-full w-full   text-lg flex flex-col `}
     >
-      <div className=" xs:z-50 xs:flex opacity-0 xs:bg-black xs:w-full xs:opacity-100 xs:h-full xs:fixed xs:justify-center xs:items-center">
+      <div className="absolute xs:z-50 xs:flex opacity-0 xs:bg-black xs:w-full xs:opacity-100 xs:h-full xs:fixed xs:justify-center xs:items-center">
         <section>
           <h2 className=" text-4xl text-center text-slate-300">
             This website is currently optimized for mobile devices only
