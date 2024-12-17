@@ -36,41 +36,7 @@ export default function AboutComp() {
   const contentRef = useRef(null);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-    const animationsList = [];
-    if (titleRef.current && containerRef.current) {
-      const elements = [
-        { ref: titleRef, start: "top 80%", end: "top 40%" },
-        { ref: contentRef, start: "top 70%", end: "top 30%" },
-      ];
-      elements.forEach(({ ref, start, end }) => {
-        const animation = gsap.fromTo(
-          ref.current,
-          { opacity: 0, y: 200 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start,
-              end,
-              scrub: true,
-            },
-          }
-        );
-        animationsList.push(animation);
-      });
-    }
-    return () => {
-      animationsList.forEach((animation) => {
-        animation?.kill();
-      });
-      ScrollTrigger.getAll().forEach((trigger) => {
-        trigger.kill();
-      });
-    };
-  }, []);
+    gsap.registerPlugin(ScrollToPlugin)},[])
   useEffect(() => {
     const animationList = [];
     if (aboutRef.current) {
